@@ -1,0 +1,48 @@
+can install multiple packages on one line with npm
+npm install express mysql dotenv
+
+/**
+ * 
+ * checkpoint due on 14 June 2022
+ * 
+ * - express api server that manages SOMETHING (todos, users, recipes, events, cars, students etc.)
+ * >>>Requirements:
+ * we want an api endpoint (route) that can:
+ * - add an item to the database
+ * - update an item in the db, given the id
+ * - list a summary of all items in the db
+ * - get details about a single item, given the id
+ * - delete an item in the database, given the id
+ * 
+ * >>you must use more than one file, i.e. organize your code using router file, and controller file
+ * >>you must use the static functionality to serve up an html file that acts as the documentation for your api
+ * >>your code/functions must have good code comments / documentation
+ * >>your application must connect to a database (mysql)
+ * >>you must use dotenv to store sensitive information (db password, username, url)
+ * 
+ * 
+ * >>try to write a piece of code which will just flip the done from true to false, or from done to not done simply by calling it
+ * 
+ */
+
+
+ Testing for the postman API tests
+
+ creating a new user to the database
+{
+    "first_name": "Bob",
+    "last_name": "Builder",
+    "county": "Construction Central",
+    "employed": True,
+    "salary": 12345
+}
+ registering a new user to the database
+ {
+    "first_name": "",
+    "last_name": "",
+    "email": "xyz@abc.com",
+    "password": "password123"
+    "county": "",
+    "employed": True,
+    "salary": 12345
+}

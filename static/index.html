@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Users CRUD App</title>
+</head>
+<body>
+  <header>
+    <h1>Users CRUD API Documentation</h1>
+    <h3>by Caleb Aurand</h3>
+  </header>
+  <main>
+    <h3>GET /users</h3>
+    <span> This route will return an array for each user item in our app. But only the county, first name, and last name are included.</span>
+
+    <h3>GET /users:id</h3>
+    <span> This route will return an array of one user object found by the user's id, with the fields of first_name, last_name, county, employed, and salary. </span>
+
+    <h3>POST /users</h3>
+    <span> This route can be used to create a user. The body of the request should include the first_name, last_name and county. The boolean if a user is employed, and their salary can be included, but is optional </span>
+    <div class="code-div"><code>
+      {
+        "first_name": "Bob",
+        "last_name": "Smith",
+        "county": "Dallas",
+        "employed": True,
+        "salary": 25000
+      }
+    </code></div>
+
+    <h3>PUT /users:id</h3>
+    <span> This route will update one user object's database values. It is updated by id. If the user is not found an error status code will be returned.
+    The json body of the update request should include first_name, last_name and county. Optionally it can also include employed, and salary.</span>
+    <div class="code-div">
+      <code>
+        {
+          "first_name": "Bob",
+        "last_name": "Smith",
+        "county": "Dallas",
+        "employed": True,
+        "salary": 25000
+        }
+      </code>
+    </div>
+
+    <h3>DELETE /users:id</h3>
+    <span> This route will delete one user found by the user's id, from the table of crudUsers. If the user's id is not found then an error status code will be returned. </span>
+
+    <!-- include the routes with h3/h4 and the put/post/update/delete
+    then the code for sql of what will be changed, or how to send request changes for the table info -->
+  </main>
+</body>
+</html>
