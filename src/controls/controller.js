@@ -238,7 +238,7 @@ module.exports = {
   createUser,
   updateUser,
   deleteUser,
-  getCount
+  getCount,
 }
 
  
