@@ -24,6 +24,11 @@ let userRoutes = require('./routes/routes');
 //tell the app to use these routes for users
 app.use(userRoutes);
 
+//tell the app to use the routes for user's registration and login
+let pwUserRoutes = require('./routes/usersRoute');
+app.use(pwUserRoutes);
+
+
 app.listen(PORT, function(){
   console.log('server started listening on port ', PORT);
 });

@@ -14,6 +14,9 @@
 
 let db = require('../model/db');
 
+//bring in the argon2 encryption password hash library
+let argon = require('argon2');
+
 /**Create the logic to create a new user
  * Take the json body from the user input
  * check if the user input scenarios are valid
@@ -203,7 +206,7 @@ const getCount = (req, res) => {
 
   db.query(sql, (err, results)=>{
     if(err){
-      console.log("Cound not issue query to database ", err);
+      console.log("Could not issue query to database ", err);
       res.sendStatus(500);
     } else {
       res.send(results);

@@ -17,6 +17,15 @@ employed BOOLEAN,
 salary INT
 );
 
+CREATE TABLE usersWithPasswords
+(
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  first_name VARCHAR(50) NOT NULL,
+  last_name VARCHAR(50) NOT NULL,
+  email VARCHAR(50) NOT NULL UNIQUE,
+  pw_hash VARCHAR(1000) NOT NULL,
+
+);
 
 
 -- find all users first name, last name, and county
@@ -54,3 +63,9 @@ VALUES
   ("Cammy","Albares", "Red Rock", 0, null),
   ("Mattie","Poquette", "Mt Everett", 1, 81000),
   ("Meaghan","Garufi", "D.C.", 1, 66000);
+
+  -- WHEN USERS REGISTER THEY WILL NEED THEIR DATA INPUT INTO THE TABLE --
+  INSERT INTO usersWithPasswords (first_name, last_name, email, pw_hash) VALUES(?, ?, ?, ?);
+
+  -- when users attempt to login to the application
+  SELECT email, pw_hash FROM usersWithPasswords WHERE id = ?;
