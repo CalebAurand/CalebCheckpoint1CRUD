@@ -9,12 +9,15 @@
 const express = require('express');
 const router = new express.Router();
 const controller = require('../controls/controller');
+const userController = require('../controls/userControls');
 
+//get the authorization middleware for use in verifying JWT's
+const auth = require('../middleware/auth');
 router.get("/users", controller.getUsers);
 
 
-//create a route to get one user by id
-router.get("/users/:id", controller.getOneUser);
+//create a route to get one user by id if the JWT is for an admin role
+router.get("/users/:id", auth.verifyJWT, /*auth.verifyAdmin*/ controller.getOneUser); // check if user is logged in, then admin role
 
 //create a route to update one user's info
 router.put("/users/:id", controller.updateUser);
@@ -35,6 +38,6 @@ router.get("/count", controller.getCount);
 // router.put("/login", controller.login);
 
 //create a route that will take in the users JWT and give them back their personal info, including their id number
-// router.get("/personal/:id", controller.getPersonal);
+router.get("/personal/:id", auth.verifyJWT, userController.getPersonal);
 
 module.exports = router;

@@ -17,6 +17,9 @@ let db = require('../model/db');
 //bring in the argon2 encryption password hash library
 let argon = require('argon2');
 
+//bring in the jwt library to use JSON Web Tokens
+let jwt = require('jsonwebtoken');
+
 /**Create the logic to create a new user
  * Take the json body from the user input
  * check if the user input scenarios are valid

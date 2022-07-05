@@ -17,6 +17,9 @@ employed BOOLEAN,
 salary INT
 );
 
+-- can include an extra field "role" to define admin, or basic user for auth.js verification
+-- can send the role back in the token to verify if they are admin or not
+-- return an error message if it fails
 CREATE TABLE usersWithPasswords
 (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
